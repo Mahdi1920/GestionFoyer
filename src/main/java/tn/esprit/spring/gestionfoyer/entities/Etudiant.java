@@ -1,15 +1,13 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.List;
 
-@Table
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,10 +19,13 @@ public class Etudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-     long idEtudiant;
-     String nomEt;
-     String prenomEt;
-     long cin;
-     String ecole;
-     Date dateNaissance;
+    long idEtudiant;
+    String nomEt;
+    String prenomEt;
+    long cin;
+    String ecole;
+    Date dateNaissance;
+    @ManyToMany(mappedBy = "etudiants")
+    List<Reservation> reservations;
+
 }

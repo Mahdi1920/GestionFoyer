@@ -1,13 +1,13 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Table
+import java.util.Date;
+import java.util.List;
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,7 +19,10 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-    String idReservation;
-    String nomReservation;
+    long idReservation;
+    Date anneeUniversite;
     long capaciteBloc;
+    @ManyToMany
+    List<Etudiant> etudiants;
+
 }

@@ -1,13 +1,12 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Table
+import java.util.List;
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,4 +21,10 @@ public class Foyer {
     long idFoyer;
     String nomFoyer;
     long capaciteFoyer;
+
+    @OneToOne(mappedBy= "foyer")
+    Universite universite;
+
+    @OneToMany(mappedBy="foyer")
+    List<Bloc> blocs;
 }

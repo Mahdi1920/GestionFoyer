@@ -1,13 +1,10 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Table
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,8 +16,9 @@ public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-    private long idUniversite;
-    private String nomUniversite;
-    private String adresse;
-
+    long idUniversite;
+    String nomUniversite;
+    String adresse;
+    @OneToOne
+    Foyer foyer ;
 }
