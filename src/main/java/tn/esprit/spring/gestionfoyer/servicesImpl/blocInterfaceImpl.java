@@ -28,7 +28,7 @@ public class blocInterfaceImpl implements blocInterface {
 
     @Override
     public Bloc retrieveBloc(long idBloc) {
-        return null;
+        return blocRepo.findById(idBloc).orElse(null);
     }
 
     @Override

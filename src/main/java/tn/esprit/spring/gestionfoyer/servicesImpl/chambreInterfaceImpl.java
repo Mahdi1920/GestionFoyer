@@ -28,6 +28,6 @@ public class chambreInterfaceImpl implements chambreInterface {
 
     @Override
     public Chambre retrieveChambre(long idChambre) {
-        return null;
+        return chambreRepo.findById(idChambre).orElse(null);
     }
 }

@@ -17,9 +17,8 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
-    long idReservation;
+    String idReservation;
     Date anneeUniversite;
     long capaciteBloc;
     @ManyToMany
