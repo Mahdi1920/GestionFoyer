@@ -3,6 +3,7 @@ package tn.esprit.spring.gestionfoyer.servicesImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.gestionfoyer.ServicesInterfaces.universiteInterface;
+import tn.esprit.spring.gestionfoyer.entities.TypeChambre;
 import tn.esprit.spring.gestionfoyer.entities.Universite;
 import tn.esprit.spring.gestionfoyer.repositories.universiteRepository;
 
@@ -29,5 +30,10 @@ public class universiteInterfaceImpl implements universiteInterface {
     @Override
     public Universite retrieveUniversite(long idUniversite) {
         return universiteRepo.findById(idUniversite).orElse(null);
+    }
+
+    @Override
+    public List<Universite> getUnivByTypeChambre(TypeChambre type) {
+        return universiteRepo.findByFoyerBlocsChambresTypeC(type);
     }
 }
