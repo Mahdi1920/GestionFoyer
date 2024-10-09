@@ -1,5 +1,6 @@
 package tn.esprit.spring.gestionfoyer.ServicesInterfaces;
 
+import tn.esprit.spring.gestionfoyer.entities.TypeChambre;
 import tn.esprit.spring.gestionfoyer.entities.Universite;
 
 import java.util.List;
@@ -12,5 +13,7 @@ public interface universiteInterface {
     Universite updateUniversite (Universite u);
 
     Universite retrieveUniversite (long idUniversite);
+
+    List<Universite>getUnivByTypeChambre(TypeChambre type);
 
 }

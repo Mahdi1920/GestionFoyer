@@ -35,4 +35,9 @@ public class blocInterfaceImpl implements blocInterface {
     public void removeBloc(long idBloc) {
         blocRepo.deleteById(idBloc);
     }
+
+    @Override
+    public List<Bloc> getBlocByNomUniv(String nom) {
+        return blocRepo.findByFoyerUniversiteNomUniversite(nom);
+    }
 }

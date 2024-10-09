@@ -15,4 +15,6 @@ public interface blocInterface {
 
     void removeBloc (long idBloc);
 
+    List<Bloc> getBlocByNomUniv(String nom);
+
 }

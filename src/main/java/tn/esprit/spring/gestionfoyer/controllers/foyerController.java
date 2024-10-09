@@ -1,10 +1,7 @@
 package tn.esprit.spring.gestionfoyer.controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.gestionfoyer.ServicesInterfaces.foyerInterface;
 import tn.esprit.spring.gestionfoyer.entities.Foyer;
 
@@ -15,24 +12,24 @@ import java.util.List;
 @RequestMapping("/api/foyer")
 public class foyerController {
     foyerInterface foyerInterface;
-    @GetMapping("/getAllFoyer")
+    @GetMapping("/getFoyers")
     public List<Foyer> retrieveAllFoyers() {
         return foyerInterface.retrieveAllFoyers();
     }
     @PostMapping("/addFoyer")
-    public Foyer addFoyer(Foyer f) {
+    public Foyer addFoyer(@RequestBody Foyer f) {
         return foyerInterface.addFoyer(f);
     }
-
-    public Foyer updateFoyer(Foyer f) {
+    @PutMapping("/putFoyer")
+    public Foyer updateFoyer(@RequestBody Foyer f) {
         return foyerInterface.updateFoyer(f);
     }
-
-    public Foyer retrieveFoyer(long idFoyer) {
+    @GetMapping("/GetFoyerById/{idFoyer}")
+    public Foyer retrieveFoyer(@PathVariable long idFoyer) {
         return foyerInterface.retrieveFoyer(idFoyer);
     }
-
-    public void removeFoyer(long idFoyer) {
+    @DeleteMapping("/DeleteFoyer/{idFoyer}")
+    public void removeFoyer(@PathVariable long idFoyer) {
         foyerInterface.removeFoyer(idFoyer);
     }
 
