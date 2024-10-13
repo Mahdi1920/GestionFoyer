@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface universiteRepository extends JpaRepository<Universite,Long> {
-    List<Universite> findByFoyerBlocsChambresTypeC(TypeChambre type);
+    List<Universite> findByFoyerBlocsChambresTypC(TypeChambre type);
+    Universite findByNomUniversiteLike(String NomUniversite);
 }

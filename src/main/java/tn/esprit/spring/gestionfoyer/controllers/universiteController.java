@@ -33,4 +33,8 @@ public class universiteController {
     public List<Universite> getUnivByTypeChambre(@PathVariable TypeChambre type) {
         return universiteInterface.getUnivByTypeChambre(type);
     }
+    @PutMapping("/affecterFoyerUniversiter/{idFoyer}/{nomUniversite}")
+    public Universite affecterFoyerAUniversite(@PathVariable long idFoyer, @PathVariable String nomUniversite) {
+        return universiteInterface.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
 }

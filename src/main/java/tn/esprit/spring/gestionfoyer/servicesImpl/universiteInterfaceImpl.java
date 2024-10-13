@@ -3,8 +3,10 @@ package tn.esprit.spring.gestionfoyer.servicesImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.gestionfoyer.ServicesInterfaces.universiteInterface;
+import tn.esprit.spring.gestionfoyer.entities.Foyer;
 import tn.esprit.spring.gestionfoyer.entities.TypeChambre;
 import tn.esprit.spring.gestionfoyer.entities.Universite;
+import tn.esprit.spring.gestionfoyer.repositories.foyerRepository;
 import tn.esprit.spring.gestionfoyer.repositories.universiteRepository;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class universiteInterfaceImpl implements universiteInterface {
     universiteRepository universiteRepo;
+    foyerRepository foyerRepository;
     @Override
     public List<Universite> retrieveAllUniversities() {
         return universiteRepo.findAll();
@@ -34,6 +37,15 @@ public class universiteInterfaceImpl implements universiteInterface {
 
     @Override
     public List<Universite> getUnivByTypeChambre(TypeChambre type) {
-        return universiteRepo.findByFoyerBlocsChambresTypeC(type);
+        return universiteRepo.findByFoyerBlocsChambresTypC(type);
+    }
+
+    @Override
+    public Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite) {
+        Foyer foyer =foyerRepository.findById(idFoyer).orElse(null);
+        Universite universite =universiteRepo.findByNomUniversiteLike(nomUniversite);
+        universite.setFoyer(foyer);
+        universiteRepo.save(universite);
+        return universite;
     }
 }
