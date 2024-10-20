@@ -15,5 +15,6 @@ public interface foyerInterface {
 
     void removeFoyer (long idFoyer);
 
+    Foyer ajouterFoyerEtAffecterAUniversite (Foyer foyer, long idUniversite) ;
 
 }

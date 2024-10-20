@@ -48,4 +48,15 @@ public class universiteInterfaceImpl implements universiteInterface {
         universiteRepo.save(universite);
         return universite;
     }
+
+    /*@Override
+    public Universite desaffecterFoyerAUniversite(long idUniversite) {
+        Universite universite = universiteRepo.findById(idUniversite).orElse(null);
+        assert universite != null ;
+        Foyer foyer = universite.getFoyer();
+        assert foyer != null ;
+        universite.setFoyer(null);
+        universiteRepo.save(universite);
+        return universite;
+    }*/
 }

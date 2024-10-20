@@ -1,5 +1,6 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -25,6 +26,6 @@ public class Foyer {
     @OneToOne(mappedBy= "foyer")
     Universite universite;
 
-    @OneToMany(mappedBy="foyer")
+    @OneToMany(mappedBy="foyer",cascade =CascadeType.ALL)
     List<Bloc> blocs;
 }

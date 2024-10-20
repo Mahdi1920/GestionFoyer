@@ -20,7 +20,7 @@ public class Reservation {
     @Setter(AccessLevel.NONE)
     String idReservation;
     Date anneeUniversite;
-    long capaciteBloc;
+    boolean estValide;
     @ManyToMany
     List<Etudiant> etudiants;
 

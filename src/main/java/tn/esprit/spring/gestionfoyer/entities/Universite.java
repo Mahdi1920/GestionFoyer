@@ -1,5 +1,6 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -19,6 +20,7 @@ public class Universite {
     long idUniversite;
     String nomUniversite;
     String adresse;
+    @JsonIgnore
     @OneToOne
     Foyer foyer ;
 }

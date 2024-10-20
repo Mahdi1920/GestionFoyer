@@ -17,5 +17,5 @@ public interface universiteInterface {
     List<Universite>getUnivByTypeChambre(TypeChambre type);
 
     Universite affecterFoyerAUniversite(long idFoyer ,String nomUniversite);
-
+    //Universite desaffecterFoyerAUniversite (long idUniversite) ;
 }

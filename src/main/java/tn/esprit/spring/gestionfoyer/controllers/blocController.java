@@ -28,8 +28,8 @@ public class blocController {
     public Bloc retrieveBloc(@PathVariable long idBloc) {
         return blocInterface.retrieveBloc(idBloc);
     }
-
-    public void removeBloc(long idBloc) {
+    @DeleteMapping("/deleteBloc/{idBloc}")
+    public void removeBloc(@PathVariable long idBloc) {
         blocInterface.removeBloc(idBloc);
     }
 
