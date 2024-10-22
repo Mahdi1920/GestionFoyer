@@ -16,5 +16,7 @@ public interface chambreInterface {
     Chambre retrieveChambre (long idChambre);
 
     Bloc affecterChambresABloc(List<Long> numChambre, long idBloc) ;
-   // List<Chambre> getChambresParBlocEtType (long idBloc, TypeChambre typeC) ;
+    List<Chambre> getChambresParBlocEtType (long idBloc, TypeChambre typeC) ;
+    List<Chambre> getChambresParBlocEtTypeJpql (long idBloc, TypeChambre typeC) ;
+    public List<Chambre> getChambresParNomUniversite( String nomUniversite) ;
 }

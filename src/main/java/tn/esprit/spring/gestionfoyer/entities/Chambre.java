@@ -1,5 +1,6 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -25,5 +26,6 @@ public class Chambre {
     @OneToMany
     List<Reservation> reservations;
     @ManyToOne
+    @JsonIgnore
     Bloc bloc ;
 }

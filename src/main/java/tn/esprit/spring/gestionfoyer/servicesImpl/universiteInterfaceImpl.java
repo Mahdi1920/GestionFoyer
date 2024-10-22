@@ -49,7 +49,7 @@ public class universiteInterfaceImpl implements universiteInterface {
         return universite;
     }
 
-    /*@Override
+    @Override
     public Universite desaffecterFoyerAUniversite(long idUniversite) {
         Universite universite = universiteRepo.findById(idUniversite).orElse(null);
         assert universite != null ;
@@ -58,5 +58,5 @@ public class universiteInterfaceImpl implements universiteInterface {
         universite.setFoyer(null);
         universiteRepo.save(universite);
         return universite;
-    }*/
+    }
 }

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface blocRepository extends JpaRepository<Bloc,Long> {
-    List<Bloc> findByFoyerUniversiteNomUniversite(String nom);
+    //List<Bloc> findByFoyerUniversiteNomUniversite(String nom);
 }

@@ -18,6 +18,7 @@ public class Universite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     long idUniversite;
+    @Column(unique = true)
     String nomUniversite;
     String adresse;
     @JsonIgnore

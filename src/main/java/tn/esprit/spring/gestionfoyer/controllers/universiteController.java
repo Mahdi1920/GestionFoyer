@@ -37,8 +37,8 @@ public class universiteController {
     public Universite affecterFoyerAUniversite(@PathVariable long idFoyer, @PathVariable String nomUniversite) {
         return universiteInterface.affecterFoyerAUniversite(idFoyer, nomUniversite);
     }
-    /*@PutMapping("/desaffecterFoyerUniversiter/{idUniversite}")
+    @PutMapping("/desaffecterFoyerUniversiter/{idUniversite}")
     public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
         return universiteInterface.desaffecterFoyerAUniversite(idUniversite);
-    }*/
+    }
 }

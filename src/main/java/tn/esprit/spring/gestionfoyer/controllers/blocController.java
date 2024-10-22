@@ -33,8 +33,8 @@ public class blocController {
         blocInterface.removeBloc(idBloc);
     }
 
-    @GetMapping("/getBlocByNomUniversite/{nom}")
+    /*@GetMapping("/getBlocByNomUniversite/{nom}")
     public List<Bloc> getBlocByNomUniv(@PathVariable String nom) {
         return blocInterface.getBlocByNomUniv(nom);
-    }
+    }*/
 }

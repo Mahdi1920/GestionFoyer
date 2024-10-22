@@ -25,4 +25,9 @@ public class reservationInterfaceImpl implements reservationInterface {
     public Reservation retrieveReservation(String idReservation) {
         return reservationRepo.findById(idReservation).orElse(null);
     }
+
+    @Override
+    public Reservation ajouterReservation(long idChambre, long cinEtudiant) {
+        return null;
+    }
 }

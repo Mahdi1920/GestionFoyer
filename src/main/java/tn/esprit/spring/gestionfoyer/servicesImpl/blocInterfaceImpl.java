@@ -36,8 +36,8 @@ public class blocInterfaceImpl implements blocInterface {
         blocRepo.deleteById(idBloc);
     }
 
-    @Override
+    /*@Override
     public List<Bloc> getBlocByNomUniv(String nom) {
         return blocRepo.findByFoyerUniversiteNomUniversite(nom);
-    }
+    }*/
 }
