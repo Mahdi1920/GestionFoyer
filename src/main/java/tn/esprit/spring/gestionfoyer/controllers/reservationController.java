@@ -24,4 +24,13 @@ public class reservationController {
     public Reservation retrieveReservation(@PathVariable String idReservation) {
         return reservationInterface.retrieveReservation(idReservation);
     }
+    @PostMapping("/addReservation/{idChambre}/{cinEtudiant}")
+    public Reservation ajouterReservation(@PathVariable long idChambre,@PathVariable long cinEtudiant) {
+        return reservationInterface.ajouterReservation(idChambre, cinEtudiant);
+    }
+
+    @PutMapping("/removeReservation/{cinEtudiant}")
+    public Reservation annulerReservation(@PathVariable long cinEtudiant) {
+        return reservationInterface.annulerReservation(cinEtudiant);
+    }
 }

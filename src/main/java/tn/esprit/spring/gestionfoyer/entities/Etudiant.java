@@ -1,9 +1,11 @@
 package tn.esprit.spring.gestionfoyer.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class Etudiant {
     String ecole;
     Date dateNaissance;
     @ManyToMany(mappedBy = "etudiants")
-    List<Reservation> reservations;
+    @JsonIgnore
+    List<Reservation> reservations= new ArrayList<>();
 
 }

@@ -12,5 +12,5 @@ public interface reservationInterface {
     Reservation retrieveReservation (String idReservation);
 
     public Reservation ajouterReservation (long idChambre, long cinEtudiant) ;
-
+    public Reservation annulerReservation (long cinEtudiant) ;
 }

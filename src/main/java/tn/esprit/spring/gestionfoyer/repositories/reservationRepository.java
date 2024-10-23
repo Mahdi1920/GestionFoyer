@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.spring.gestionfoyer.entities.Reservation;
 @Repository
 public interface reservationRepository extends JpaRepository<Reservation,String> {
+    Reservation findByEtudiantsCin(long cin);
 }
