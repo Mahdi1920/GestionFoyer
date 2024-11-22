@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.gestionfoyer.ServicesInterfaces.reservationInterface;
 import tn.esprit.spring.gestionfoyer.entities.Reservation;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @AllArgsConstructor
@@ -32,5 +33,9 @@ public class reservationController {
     @PutMapping("/removeReservation/{cinEtudiant}")
     public Reservation annulerReservation(@PathVariable long cinEtudiant) {
         return reservationInterface.annulerReservation(cinEtudiant);
+    }
+    @GetMapping("/getReservationParAnneeUniversitaireEtNomUniversite/{anneeUniversite}/{nomUniversite}")
+    public List<Reservation> getReservationParAnneeUniversitaireEtNomUniversite( @PathVariable LocalDate anneeUniversite , @PathVariable String nomUniversite) {
+        return reservationInterface.getReservationParAnneeUniversitaireEtNomUniversite(anneeUniversite,nomUniversite);
     }
 }

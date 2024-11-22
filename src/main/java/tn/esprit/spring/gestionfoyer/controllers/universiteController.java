@@ -41,4 +41,5 @@ public class universiteController {
     public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
         return universiteInterface.desaffecterFoyerAUniversite(idUniversite);
     }
+
 }

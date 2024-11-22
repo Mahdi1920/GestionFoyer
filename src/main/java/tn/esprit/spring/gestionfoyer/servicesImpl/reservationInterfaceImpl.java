@@ -11,6 +11,7 @@ import tn.esprit.spring.gestionfoyer.entities.Reservation;
 import tn.esprit.spring.gestionfoyer.repositories.chambreRepository;
 import tn.esprit.spring.gestionfoyer.repositories.etudiantRepository;
 import tn.esprit.spring.gestionfoyer.repositories.reservationRepository;
+import tn.esprit.spring.gestionfoyer.repositories.universiteRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class reservationInterfaceImpl implements reservationInterface {
     reservationRepository reservationRepo;
     chambreRepository chambreRepo;
     etudiantRepository etudiantRepo;
+    universiteRepository universiteRepo;
     @Override
     public List<Reservation> retrieveAllReservation() {
         return reservationRepo.findAll();
@@ -51,8 +53,6 @@ public class reservationInterfaceImpl implements reservationInterface {
                 .build();
         reservation.getEtudiants().add(etudiant);
         chambre.getReservations().add(reservation);
-        //reservation.setEstValide(true);
-        //reservation.setIdReservation(idReservation);
         return reservationRepo.save(reservation);
     }
 
@@ -69,4 +69,16 @@ public class reservationInterfaceImpl implements reservationInterface {
         //System.out.println(reservation);
         return reservationRepo.save(reservation);
     }
+
+   /*@Override
+    public List<Reservation> getReservationParAnneeUniversitaireEtNomUniversite(String nomUniversite, LocalDate anneeUniversite) {
+        return reservationRepo.findByUniversiteNomUniversiteAndReservationAnneeUniversite(nomUniversite,anneeUniversite);
+    }*/
+
+    @Override
+    public List<Reservation> getReservationParAnneeUniversitaireEtNomUniversite(LocalDate anneeUniversite, String nomUniversite) {
+        return universiteRepo.findByFoyerBlocsChambresReservationsAnneeUniversiteAndNomUniversite(anneeUniversite,nomUniversite);
+    }
+
+
 }
